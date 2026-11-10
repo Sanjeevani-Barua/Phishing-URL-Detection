@@ -1,0 +1,93 @@
+{
+  "dataset": {
+    "total_urls": 139180,
+    "phishing_or_malicious": 69590,
+    "benign": 69590,
+    "unique_domains": 80388,
+    "train_urls": 111137,
+    "test_urls": 28043
+  },
+  "split": "GroupShuffleSplit by registered domain (80/20) - test domains never seen in training",
+  "test_metrics": {
+    "Logistic Regression (features)": {
+      "accuracy": 0.772,
+      "precision": 0.8214,
+      "recall": 0.6912,
+      "f1": 0.7507,
+      "roc_auc": 0.8675,
+      "false_positive_rate": 0.1482
+    },
+    "Random Forest (features)": {
+      "accuracy": 0.8766,
+      "precision": 0.8825,
+      "recall": 0.867,
+      "f1": 0.8747,
+      "roc_auc": 0.9436,
+      "false_positive_rate": 0.1139
+    },
+    "XGBoost (features)": {
+      "accuracy": 0.8793,
+      "precision": 0.8882,
+      "recall": 0.8658,
+      "f1": 0.8769,
+      "roc_auc": 0.9478,
+      "false_positive_rate": 0.1074
+    },
+    "LogReg (char n-grams)": {
+      "accuracy": 0.9473,
+      "precision": 0.9584,
+      "recall": 0.9345,
+      "f1": 0.9463,
+      "roc_auc": 0.9862,
+      "false_positive_rate": 0.04
+    },
+    "Hybrid ensemble (final)": {
+      "accuracy": 0.9479,
+      "precision": 0.9615,
+      "recall": 0.9325,
+      "f1": 0.9468,
+      "roc_auc": 0.984,
+      "false_positive_rate": 0.0368
+    }
+  },
+  "hybrid_random_split_for_comparison": {
+    "accuracy": 0.9551,
+    "precision": 0.9697,
+    "recall": 0.9396,
+    "f1": 0.9544,
+    "roc_auc": 0.9881,
+    "false_positive_rate": 0.0294
+  },
+  "features": [
+    "url_length",
+    "host_length",
+    "path_length",
+    "query_length",
+    "num_dots_host",
+    "num_subdomains",
+    "num_hyphens_host",
+    "num_hyphens_url",
+    "num_digits",
+    "digit_ratio",
+    "num_special_chars",
+    "num_path_segments",
+    "num_query_params",
+    "has_at_symbol",
+    "has_ip_host",
+    "has_port",
+    "has_double_slash_path",
+    "has_punycode",
+    "has_percent_encoding",
+    "host_entropy",
+    "url_entropy",
+    "longest_token",
+    "suspicious_word_count",
+    "brand_outside_domain",
+    "risky_tld",
+    "is_shortener",
+    "is_free_hosting",
+    "risky_extension",
+    "domain_vowel_ratio",
+    "domain_digit_count"
+  ]
+}

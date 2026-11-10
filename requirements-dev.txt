@@ -1,0 +1,5 @@
+-r requirements.txt
+matplotlib==3.11.2
+pytest
+bandit
+pip-audit
